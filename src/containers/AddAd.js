@@ -17,23 +17,23 @@ class AddAd extends React.Component {
   
   render() {
     return (
-        <View style={{flexDirection:'row',marginHorizontal:20}}>
+        <View style={ styles.container}>
             <TextInput
                 onChangeText={(text) => this.setState({ text })}
                 value={this.state.text}
-                placeholder="name"
-                style={{borderWidth:1, borderColor:'#f2f2e1', backgroundColor: '#eaeaea', height: 50, flex:1, padding:5}}
+                placeholder="title"
+                style={styles.inputTextStyle}
             />
             <TextInput
                 onChangeText={(price) => this.setState({ price })}
                 value={this.state.price}
                 placeholder="price"
-                style={{borderWidth:1, borderColor:'#f2f2e1', backgroundColor: '#eaeaea', height: 50, flex:1, padding:5}}
+                style={styles.inputTextStyle}
             />
 
             <TouchableOpacity onPress={()=> this.addAd(this.state.text,this.state.price)} >
-                <View style={{height:50,backgroundColor:'#eaeaea' , alignContent:'center',alignItems:'center'}}>
-                    <Ionicons name="md-add" size={30} style={{color: '#de9595', padding:10}}  />
+                <View style={styles.uploadButton}>
+                    <Ionicons name="ios-checkmark-circle-outline" size={30} style={{color: '#30d0fe', padding:10}}  />
                 </View>
             </TouchableOpacity>
         </View>
@@ -44,6 +44,22 @@ export default connect()(AddAd);
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
+    flexDirection:'row',
+    marginHorizontal: 15,
+    borderRadius: 10,
   },
+  inputTextStyle: {
+    flex:1,
+    borderWidth:1, 
+    borderColor:'#30d0fe', 
+    backgroundColor: 'white', 
+    height: 50, 
+    padding:5
+  },
+  uploadButton: {
+    height:50,
+    backgroundColor:'white', 
+    alignContent:'center',
+    alignItems:'center'
+  }
 });

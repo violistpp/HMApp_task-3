@@ -20,10 +20,10 @@ const HomeStack = createStackNavigator(
   {
     defaultNavigationOptions: {
       headerStyle: {
-        backgroundColor: 'black',
+        backgroundColor: '#30d0fe',
       },
-      headerTintColor: '#FFFFFF',
-      title: 'Home',
+      headerTintColor: 'white',
+      title: 'Skelbimai',
     },
   }
 );
@@ -35,9 +35,9 @@ const SettingsStack = createStackNavigator(
   {
     defaultNavigationOptions: {
       headerStyle: {
-        backgroundColor: 'black',
+        backgroundColor: '#30d0fe',
       },
-      headerTintColor: '#FFFFFF',
+      headerTintColor: 'white',
       title: 'Settings',
     },
 
@@ -53,9 +53,9 @@ const ProfileStack = createStackNavigator(
 	{
 	  defaultNavigationOptions: {
 		headerStyle: {
-		  backgroundColor: 'black',
+		  backgroundColor: '#30d0fe',
 		},
-		headerTintColor: '#FFFFFF',
+		headerTintColor: 'white',
 		title: 'Profile',
 	  },
 	},
@@ -68,38 +68,39 @@ const App = createBottomTabNavigator(
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+      tabBarIcon: ({ tintColor }) => {
         
         const { routeName } = navigation.state;
         let IconComponent = Ionicons;
         let iconName;
         if (routeName === 'Home') {
-          iconName = `ios-home`;
+          iconName = `ios-cart`;
         } 
         else if (routeName === 'Settings') {
-          iconName = `ios-settings`;
+          iconName = `ios-build`;
         }
         else if (routeName === 'Profile') {
-          iconName = `ios-person`;
+          iconName = `ios-contact`;
         }
         return <IconComponent name={iconName} size={35} color={tintColor} />;
       },
     }),
     tabBarOptions: {
-      activeTintColor: 'tomato',
-      inactiveTintColor: 'gray',
-
+      activeTintColor: 'white',
+      inactiveTintColor: 'black',
     },
     initialRouteName: "Home",
     
     tabBarOptions: {
-      activeTintColor: '#e91e63',
+      activeTintColor: 'white',
+      inactiveTintColor: 'black',
       labelStyle: {
-        fontSize: 12,
+        fontSize: 10,
       },
       style: {
-        backgroundColor: 'black',
-        borderTopWidth:0,
+        backgroundColor: '#30d0fe',
+        borderColor: 'white',
+        borderTopWidth: 0,
       },
     }
   }

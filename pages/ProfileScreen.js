@@ -67,14 +67,14 @@ export default class ProfileScreen extends React.Component {
 		switch (this.state.loggedIn) {
 			case 1:
 				return (
-					<View style={{flex:2, backgroundColor: 'black', alignContent: 'center', alignItems: 'center'}}>
+					<View style={{flex:2, backgroundColor: 'white', alignContent: 'center', alignItems: 'center'}}>
 						<View>
-							<Text style={{color: 'white'}}> {this.state.email} </Text>
+							<Text style={{ marginTop: 20 }}> Naudotojo loginas: <Text style={{ fontWeight: "bold" }}>{this.state.email}</Text> </Text>
 						</View>
 						<TouchableOpacity
 							style={styles.button}
 							onPress={() => this.logOut()}>
-							<Text>LogOut</Text>
+							<Text style={{ color: "white" }}>LogOut</Text>
 						</TouchableOpacity>
 					</View>
 				)
@@ -85,13 +85,13 @@ export default class ProfileScreen extends React.Component {
 						<TouchableOpacity
 							style={styles.button}
 							onPress={() => this.props.navigation.navigate('Login')}>
-							<Text>Login</Text>
+							<Text style={{ color: "white" }}>Login</Text>
 						</TouchableOpacity>
 
 						<TouchableOpacity
 							style={styles.button}
 							onPress={() => this.props.navigation.navigate('Register')}>
-							<Text>Registration</Text>
+							<Text style={{ color: "white" }}>Registration</Text>
 						</TouchableOpacity>
 					</View>
 				)
@@ -104,7 +104,7 @@ export default class ProfileScreen extends React.Component {
 const styles = StyleSheet.create({
 	button: {
 		alignItems: 'center',
-		backgroundColor: '#DDDDDD',
+		backgroundColor: '#30d0fe',
 		padding: 10,
 		width: 300,
 		marginTop: 16,

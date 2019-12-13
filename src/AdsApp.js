@@ -5,6 +5,7 @@ import { StyleSheet,View } from 'react-native';
 import AddAd from './containers/AddAd';
 import VisibleAds from './containers/VisibleAds';
 import FetchAdsButton from './containers/FetchAdsButton';
+import { ScrollView } from 'react-native-gesture-handler';
 
 class AdsApp extends React.Component {
 
@@ -16,13 +17,16 @@ class AdsApp extends React.Component {
     return (
       <View style={styles.container}>
         <AddAd/>
-        <View>
-          <FetchAdsButton/>
-        </View>
 
-        <View>
-          <VisibleAds/>
-        </View>
+        <ScrollView>
+          <View>
+            <VisibleAds/>
+          </View>
+
+          <View style={{ alignSelf: "center", marginVertical: 20 }}>
+            <FetchAdsButton/>
+          </View>
+        </ScrollView>
       </View>
     );
   }

@@ -9,18 +9,9 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
-      <Provider store={store}>
+      <Provider store={store} >
         <AdsApp/>
       </Provider>
     );
   }
 }
-const styles = StyleSheet.create({
-  button: {
-    alignItems: 'center',
-    backgroundColor: '#DDDDDD',
-    padding: 10,
-    width: 300,
-    marginTop: 16,
-  },
-});
